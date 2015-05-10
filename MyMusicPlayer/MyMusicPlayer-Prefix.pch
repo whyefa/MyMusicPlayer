@@ -1,0 +1,22 @@
+//
+//  MyMusicPlayer-Prefix.pch
+//  MyMusicPlayer
+//
+//  Created by 游侠 on 15-3-30.
+//  Copyright (c) 2015年 rc. All rights reserved.
+//
+
+#ifndef MyMusicPlayer_MyMusicPlayer_Prefix_pch
+#define MyMusicPlayer_MyMusicPlayer_Prefix_pch
+
+    #import "Configuration.h"
+    #import "UtilsMacro.h"
+    #import "UIButton+RCConfig.h"
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
