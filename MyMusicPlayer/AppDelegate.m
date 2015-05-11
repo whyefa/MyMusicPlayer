@@ -63,10 +63,29 @@
     self.segmentController.indicator.backgroundColor = [UIColor redColor];
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:_segmentController];
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
+    UITabBarController *bar = [[UITabBarController alloc]init];
+    bar.viewControllers = @[_navigationController];
     
+    CGRect barRect = bar.tabBar.frame;
+    barRect.size.height = 54;
+    barRect.origin.y -= 5;
+    bar.tabBar.frame = barRect;
+//    [bar.tabBar sizeThatFits:CGSizeMake(kScreenWidth, 54)];
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    NSArray *songs = @[@"Out of Control",@"听",@"放下"];
+    NSArray *songer = @[@"滨崎步",@"张杰",@"胡夏"];
+    for (int i = 0; i < songs.count ; i ++) {
+        NSDictionary *dict = @{@"songer":[songer objectAtIndex:i] ,
+                               @"song":[songs objectAtIndex:i] ,
+                               @"icon":@"head_icon.jpg"};
+        [array addObject:dict];
+    }
 
+    _songControl = [[PlayerControlView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 54)];
+    [_songControl setSongList:array];
+    [bar.tabBar addSubview:_songControl];
     
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = bar;
 }
 
 

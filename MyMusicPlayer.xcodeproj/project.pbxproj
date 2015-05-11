@@ -1476,6 +1476,9 @@
 		51BCD2841AFF47F10019F294 /* MYFavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD2831AFF47F10019F294 /* MYFavoriteCell.m */; };
 		51BCD2871AFF48080019F294 /* MYSongListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD2861AFF48080019F294 /* MYSongListCell.m */; };
 		51BCD2891AFF51610019F294 /* head_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51BCD2881AFF51610019F294 /* head_icon.jpg */; };
+		B2EFE6831B00522000218D2F /* PlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE6821B00522000218D2F /* PlayerControlView.m */; };
+		B2EFE68A1B00555700218D2F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE6871B00555700218D2F /* CycleScrollView.m */; };
+		B2EFE68E1B007CE400218D2F /* PlayerControlDiscItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2981,6 +2984,12 @@
 		51BCD2851AFF48080019F294 /* MYSongListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYSongListCell.h; path = MyMusicPlayer/CELL/MYSongListCell.h; sourceTree = SOURCE_ROOT; };
 		51BCD2861AFF48080019F294 /* MYSongListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYSongListCell.m; path = MyMusicPlayer/CELL/MYSongListCell.m; sourceTree = SOURCE_ROOT; };
 		51BCD2881AFF51610019F294 /* head_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head_icon.jpg; sourceTree = "<group>"; };
+		B2EFE6811B00522000218D2F /* PlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerControlView.h; path = PlayerControllerView/PlayerControlView.h; sourceTree = "<group>"; };
+		B2EFE6821B00522000218D2F /* PlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerControlView.m; path = PlayerControllerView/PlayerControlView.m; sourceTree = "<group>"; };
+		B2EFE6861B00555700218D2F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		B2EFE6871B00555700218D2F /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		B2EFE68C1B007CE400218D2F /* PlayerControlDiscItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerControlDiscItem.h; path = PlayerControllerView/PlayerControlDiscItem.h; sourceTree = "<group>"; };
+		B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerControlDiscItem.m; path = PlayerControllerView/PlayerControlDiscItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3106,8 +3115,10 @@
 		519343AF1AC6C184002BAF43 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B2EFE6851B00555700218D2F /* CycleScrollView */,
 				510234601AC91F5000193967 /* RCView */,
 				510234521AC8E51100193967 /* Categories */,
+				B2EFE6841B00522800218D2F /* PlayerControlVeiw */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -4675,6 +4686,26 @@
 			name = MY_cell;
 			sourceTree = "<group>";
 		};
+		B2EFE6841B00522800218D2F /* PlayerControlVeiw */ = {
+			isa = PBXGroup;
+			children = (
+				B2EFE6811B00522000218D2F /* PlayerControlView.h */,
+				B2EFE6821B00522000218D2F /* PlayerControlView.m */,
+				B2EFE68C1B007CE400218D2F /* PlayerControlDiscItem.h */,
+				B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */,
+			);
+			name = PlayerControlVeiw;
+			sourceTree = "<group>";
+		};
+		B2EFE6851B00555700218D2F /* CycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B2EFE6861B00555700218D2F /* CycleScrollView.h */,
+				B2EFE6871B00555700218D2F /* CycleScrollView.m */,
+			);
+			path = CycleScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -6230,9 +6261,11 @@
 				51BCC72B1AFF39510019F294 /* SearchViewController.m in Sources */,
 				519343B91AC6C184002BAF43 /* ViewController.m in Sources */,
 				51BCD2871AFF48080019F294 /* MYSongListCell.m in Sources */,
+				B2EFE68A1B00555700218D2F /* CycleScrollView.m in Sources */,
 				51BCD27E1AFF47490019F294 /* MYUserCenterCell.m in Sources */,
 				519343BD1AC6C200002BAF43 /* BaseViewController.m in Sources */,
 				510234631AC91F8500193967 /* RCSegmentControl.m in Sources */,
+				B2EFE6831B00522000218D2F /* PlayerControlView.m in Sources */,
 				51BCC7271AFE0FB30019F294 /* RCSegmentController.m in Sources */,
 				510234581AC8ED5200193967 /* MusicStoreViewController.m in Sources */,
 				5193438F1AC6C04A002BAF43 /* AppDelegate.m in Sources */,
@@ -6240,6 +6273,7 @@
 				510234511AC8E45600193967 /* UIButton+RCConfig.m in Sources */,
 				5193438C1AC6C04A002BAF43 /* main.m in Sources */,
 				510234551AC8ED3900193967 /* MyViewController.m in Sources */,
+				B2EFE68E1B007CE400218D2F /* PlayerControlDiscItem.m in Sources */,
 				5102345F1AC90EF600193967 /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

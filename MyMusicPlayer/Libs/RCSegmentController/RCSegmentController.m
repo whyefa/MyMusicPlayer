@@ -74,13 +74,13 @@ NSString *const segmentBarItemID = @"RCSegmentBarItem";
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self setupSubviews];
-    [self reset];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     CGSize contentSize = CGSizeMake(self.view.frame.size.width*self.viewControllers.count, 0);
     [self.slideView setContentSize:contentSize];
+    [self reset];
 }
 #pragma  mark - Setup
 
@@ -195,6 +195,7 @@ NSString *const segmentBarItemID = @"RCSegmentBarItem";
         [toSelectController didMoveToParentViewController:self];
     }
     _selectedIndex = selectedIndex;
+    
 }
 - (void)setViewControllers:(NSArray *)viewControllers{
     for (UIViewController *vc  in _viewControllers) {
@@ -299,8 +300,8 @@ NSString *const segmentBarItemID = @"RCSegmentBarItem";
 
 - (void)reset{
     _selectedIndex = NSNotFound;
-    [self setSelectedIndex:0];
     [self scrollToViewWithIndex:0 animated:NO];
+    [self setSelectedIndex:0];
     [self.segmentBar reloadData];
 }
 

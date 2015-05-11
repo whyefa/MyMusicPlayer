@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "RCSegmentController.h"
+#import "PlayerControlView.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate,RCSegmentControllerDataSource,RCSegmentControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) RCSegmentController *segmentController;
 @property (strong, nonatomic) UINavigationController *navigationController;
+
+@property (strong, nonatomic) PlayerControlView *songControl;
 
 @end
 
