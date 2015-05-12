@@ -59,7 +59,8 @@
         _scrollView.pagingEnabled = YES;
         _scrollView.backgroundColor = BACKGROUND_COLOR;
         _scrollView.showsHorizontalScrollIndicator = NO;
-        [self addSubview:_scrollView];
+     
+  
 
         _currentPageIndex = 0;
         CGFloat width = kScreenWidth - 110;
@@ -69,6 +70,8 @@
         [_scrollView addSubview:_itemA];
         [_scrollView addSubview:_itemB];
         [_scrollView addSubview:_itemC];
+
+        [self addSubview:_scrollView];
 
     }
     return self;
@@ -120,10 +123,13 @@
     [_itemA setWithDict:[_contentViews objectAtIndex:0]];
     [_itemB setWithDict:[_contentViews objectAtIndex:1]];
     [_itemC setWithDict:[_contentViews objectAtIndex:2]];
+    if (_SwipeBlock) {
+        self.SwipeBlock(_currentPageIndex);
+    }
 }
 - (NSInteger)getValidNextPageIndexWithPageIndex:(NSInteger)currentPageIndex;
 {
-    
+
     if(currentPageIndex == -1) {
         return _totalPageCount - 1;
     } else if (currentPageIndex == _totalPageCount) {

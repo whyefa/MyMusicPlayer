@@ -6,7 +6,10 @@
 //  Copyright (c) 2015年 rc. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 #import "PlayerControlDiscItem.h"
+
 @interface PlayerControlDiscItem()
 
 @property (strong, nonatomic) UIImageView *icon;
@@ -43,8 +46,33 @@
 }
 
 - (void)setWithDict:(NSDictionary *)dict {
-    _icon.image = [UIImage imageNamed:[dict objectForKey:@"icon"]];
-    _songer.text = [dict objectForKey:@"songer"];
-    _songName.text = [dict objectForKey:@"song"];
+//    _icon.image = [UIImage imageNamed:[dict objectForKey:@"icon"]];
+    NSString *mp3File = [dict objectForKey:@"path"];
+    [self getSongDetail:mp3File];
+//    _icon.image = [dict objectForKey:@"icon"];
+//    _songer.text = [dict objectForKey:@"songer"];
+//    _songName.text = [dict objectForKey:@"song"];
+}
+
+- (void)getSongDetail:(NSString*)mp3File {
+    NSMutableDictionary *retDic = [[NSMutableDictionary alloc] init];
+    
+    
+    NSURL *url = [NSURL fileURLWithPath:mp3File];
+    AVURLAsset *mp3Asset = [AVURLAsset URLAssetWithURL:url options:nil];
+    
+    
+    for (NSString *format in [mp3Asset availableMetadataFormats]) {
+        for (AVMetadataItem *metadataItem in [mp3Asset metadataForFormat:format]) {
+            
+            if(metadataItem.commonKey)
+                [retDic setObject:metadataItem.value forKey:metadataItem.commonKey];
+            
+        }
+    }
+    UIImage *cover = [UIImage imageWithData:[[retDic objectForKey:@"artwork"] objectForKey:@"data"]];
+    _icon.image = cover;
+    _songer.text = [retDic objectForKey:@"artist"];
+    _songName.text = [retDic objectForKey:@"title"];
 }
 @end

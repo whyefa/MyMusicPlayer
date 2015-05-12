@@ -72,12 +72,12 @@
     bar.tabBar.frame = barRect;
 //    [bar.tabBar sizeThatFits:CGSizeMake(kScreenWidth, 54)];
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
-    NSArray *songs = @[@"Out of Control",@"听",@"放下"];
-    NSArray *songer = @[@"滨崎步",@"张杰",@"胡夏"];
-    for (int i = 0; i < songs.count ; i ++) {
-        NSDictionary *dict = @{@"songer":[songer objectAtIndex:i] ,
-                               @"song":[songs objectAtIndex:i] ,
-                               @"icon":@"head_icon.jpg"};
+    NSArray *fileName = @[@"listen.mp3",@"turanxindong.mp3",@"nizainali.mp3",@"peiwoquliulang.mp3",@"fangxia.mp3"];
+
+    for (int i = 0; i < fileName.count ; i ++) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:[fileName objectAtIndex:i] ofType:nil];
+        NSDictionary *tempDict = @{@"path":path,@"file":[fileName objectAtIndex:i]};
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:tempDict];
         [array addObject:dict];
     }
 

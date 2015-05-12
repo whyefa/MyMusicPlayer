@@ -44,8 +44,13 @@
  当点击的时候，执行的block
  **/
 @property (nonatomic , copy) void (^TapActionBlock)(NSInteger pageIndex);
-
+/**
+    滑动换歌
+ */
+@property (nonatomic, copy) void (^SwipeBlock)(NSInteger songIndex);
 
 @property (nonatomic,weak) id<CycleDelegate> delegate;
+
+- (void)resetContent;
 
 @end
