@@ -72,7 +72,7 @@
     bar.tabBar.frame = barRect;
 //    [bar.tabBar sizeThatFits:CGSizeMake(kScreenWidth, 54)];
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
-    NSArray *fileName = @[@"listen.mp3",@"turanxindong.mp3",@"nizainali.mp3",@"peiwoquliulang.mp3",@"fangxia.mp3"];
+    NSArray *fileName = @[@"listen.mp3",@"peiwoquliulang.mp3",@"fangxia.mp3"];
 
     for (int i = 0; i < fileName.count ; i ++) {
         NSString *path = [[NSBundle mainBundle] pathForResource:[fileName objectAtIndex:i] ofType:nil];

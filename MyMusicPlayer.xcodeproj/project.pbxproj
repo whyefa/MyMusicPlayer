@@ -1486,8 +1486,6 @@
 		B2D7FBCB1B01DE0000FB5B1B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBC51B01DE0000FB5B1B /* Default@2x.png */; };
 		B2D7FBD31B01E26A00FB5B1B /* AFAudioRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D7FBD01B01E26A00FB5B1B /* AFAudioRouter.m */; };
 		B2D7FBD41B01E26A00FB5B1B /* AFSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D7FBD21B01E26A00FB5B1B /* AFSoundManager.m */; };
-		B2D7FBD91B01FAC300FB5B1B /* turanxindong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBD51B01FAC300FB5B1B /* turanxindong.mp3 */; };
-		B2D7FBDA1B01FAC300FB5B1B /* nizainali.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBD61B01FAC300FB5B1B /* nizainali.mp3 */; };
 		B2D7FBDB1B01FAC300FB5B1B /* peiwoquliulang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBD71B01FAC300FB5B1B /* peiwoquliulang.mp3 */; };
 		B2D7FBDC1B01FAC300FB5B1B /* fangxia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBD81B01FAC300FB5B1B /* fangxia.mp3 */; };
 		B2EFE6831B00522000218D2F /* PlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE6821B00522000218D2F /* PlayerControlView.m */; };
@@ -3024,8 +3022,6 @@
 		B2D7FBD01B01E26A00FB5B1B /* AFAudioRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAudioRouter.m; sourceTree = "<group>"; };
 		B2D7FBD11B01E26A00FB5B1B /* AFSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundManager.h; sourceTree = "<group>"; };
 		B2D7FBD21B01E26A00FB5B1B /* AFSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundManager.m; sourceTree = "<group>"; };
-		B2D7FBD51B01FAC300FB5B1B /* turanxindong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = turanxindong.mp3; sourceTree = "<group>"; };
-		B2D7FBD61B01FAC300FB5B1B /* nizainali.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nizainali.mp3; sourceTree = "<group>"; };
 		B2D7FBD71B01FAC300FB5B1B /* peiwoquliulang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peiwoquliulang.mp3; sourceTree = "<group>"; };
 		B2D7FBD81B01FAC300FB5B1B /* fangxia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fangxia.mp3; sourceTree = "<group>"; };
 		B2EFE6811B00522000218D2F /* PlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerControlView.h; path = PlayerControllerView/PlayerControlView.h; sourceTree = "<group>"; };
@@ -3117,8 +3113,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F2ABD41B01A2E000E364EA /* listen.mp3 */,
-				B2D7FBD51B01FAC300FB5B1B /* turanxindong.mp3 */,
-				B2D7FBD61B01FAC300FB5B1B /* nizainali.mp3 */,
 				B2D7FBD71B01FAC300FB5B1B /* peiwoquliulang.mp3 */,
 				B2D7FBD81B01FAC300FB5B1B /* fangxia.mp3 */,
 				519343881AC6C04A002BAF43 /* MyMusicPlayer */,
@@ -5135,7 +5129,6 @@
 				51BCD2041AFF3C950019F294 /* unipay_tenpay_inputbtnbg_high.9.png in Resources */,
 				51BCD0941AFF3C950019F294 /* qplay_auto_lock_logo.png in Resources */,
 				51BCD10F1AFF3C950019F294 /* setting_item_recognize_mask.9.png in Resources */,
-				B2D7FBD91B01FAC300FB5B1B /* turanxindong.mp3 in Resources */,
 				51BCCDB91AFF3C950019F294 /* edit_btn_selected.png in Resources */,
 				51BCD1CF1AFF3C950019F294 /* unipay_pic_selectbox.9.png in Resources */,
 				51BCD0D81AFF3C950019F294 /* s_lv1.png in Resources */,
@@ -6226,7 +6219,6 @@
 				51BCCFEF1AFF3C950019F294 /* play_page_selected.png in Resources */,
 				51BCD0471AFF3C950019F294 /* player_list_goto_radio_normal.png in Resources */,
 				51BCCE831AFF3C950019F294 /* lock.png in Resources */,
-				B2D7FBDA1B01FAC300FB5B1B /* nizainali.mp3 in Resources */,
 				51BCD15C1AFF3C950019F294 /* switch_on_clicked.png in Resources */,
 				51BCCD0B1AFF3C950019F294 /* action_sheet_favorited_normal.png in Resources */,
 				51BCCFE71AFF3C950019F294 /* play_loading_02.png in Resources */,
