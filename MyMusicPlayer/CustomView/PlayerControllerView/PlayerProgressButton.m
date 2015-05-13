@@ -50,6 +50,7 @@ NSString * const PlayerProgressButtonProgressAnimationKey = @"PlayerProgressButt
     self.progressView.shapeLayer.fillColor = [UIColor clearColor].CGColor;
     [self addSubview:self.progressView];
     
+    
     [self resetDefaults];
 }
 

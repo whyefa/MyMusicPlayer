@@ -83,12 +83,13 @@
 {
 //    [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self setScrollViewContentDataSource];
-    
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapAction:)];
+            [self addGestureRecognizer:tapGesture];
 //    NSInteger counter = 0;
 //    for (UIView *contentView in _contentViews) {
 //        contentView.userInteractionEnabled = YES;
-//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapAction:)];
-//        [contentView addGestureRecognizer:tapGesture];
+    //        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapAction:)];
+    //        [contentView addGestureRecognizer:tapGesture];
 //        CGRect rightRect = contentView.frame;
 //        rightRect.origin = CGPointMake(CGRectGetWidth(_scrollView.frame) * (counter ++), 0);
 //        contentView.frame = rightRect;

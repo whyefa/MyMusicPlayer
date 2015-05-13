@@ -1476,6 +1476,7 @@
 		51BCD2841AFF47F10019F294 /* MYFavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD2831AFF47F10019F294 /* MYFavoriteCell.m */; };
 		51BCD2871AFF48080019F294 /* MYSongListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD2861AFF48080019F294 /* MYSongListCell.m */; };
 		51BCD2891AFF51610019F294 /* head_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51BCD2881AFF51610019F294 /* head_icon.jpg */; };
+		B2A05CFD1B02F1E500C2B66E /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A05CFC1B02F1E500C2B66E /* PlayingViewController.m */; };
 		B2D7FBBE1B01DDDA00FB5B1B /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBBC1B01DDDA00FB5B1B /* AppIcon60x60@2x.png */; };
 		B2D7FBBF1B01DDDA00FB5B1B /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBBD1B01DDDA00FB5B1B /* AppIcon60x60@3x.png */; };
 		B2D7FBC61B01DE0000FB5B1B /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D7FBC01B01DE0000FB5B1B /* Default-568h.png */; };
@@ -1491,7 +1492,6 @@
 		B2EFE6831B00522000218D2F /* PlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE6821B00522000218D2F /* PlayerControlView.m */; };
 		B2EFE68A1B00555700218D2F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE6871B00555700218D2F /* CycleScrollView.m */; };
 		B2EFE68E1B007CE400218D2F /* PlayerControlDiscItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */; };
-		B2F2ABD01B0191EC00E364EA /* UAProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F2ABCF1B0191EC00E364EA /* UAProgressView.m */; };
 		B2F2ABD31B01949200E364EA /* PlayerProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F2ABD21B01949200E364EA /* PlayerProgressButton.m */; };
 		B2F2ABD51B01A2E000E364EA /* listen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2F2ABD41B01A2E000E364EA /* listen.mp3 */; };
 		B2F2ABE11B01B67000E364EA /* miniplayer_btn_pause_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F2ABD61B01B67000E364EA /* miniplayer_btn_pause_highlight@2x.png */; };
@@ -3010,6 +3010,8 @@
 		51BCD2851AFF48080019F294 /* MYSongListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYSongListCell.h; path = MyMusicPlayer/CELL/MYSongListCell.h; sourceTree = SOURCE_ROOT; };
 		51BCD2861AFF48080019F294 /* MYSongListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYSongListCell.m; path = MyMusicPlayer/CELL/MYSongListCell.m; sourceTree = SOURCE_ROOT; };
 		51BCD2881AFF51610019F294 /* head_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head_icon.jpg; sourceTree = "<group>"; };
+		B2A05CFB1B02F1E500C2B66E /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingViewController.h; sourceTree = "<group>"; };
+		B2A05CFC1B02F1E500C2B66E /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingViewController.m; sourceTree = "<group>"; };
 		B2D7FBBC1B01DDDA00FB5B1B /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
 		B2D7FBBD1B01DDDA00FB5B1B /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@3x.png"; sourceTree = "<group>"; };
 		B2D7FBC01B01DE0000FB5B1B /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
@@ -3030,8 +3032,6 @@
 		B2EFE6871B00555700218D2F /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		B2EFE68C1B007CE400218D2F /* PlayerControlDiscItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerControlDiscItem.h; path = PlayerControllerView/PlayerControlDiscItem.h; sourceTree = "<group>"; };
 		B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerControlDiscItem.m; path = PlayerControllerView/PlayerControlDiscItem.m; sourceTree = "<group>"; };
-		B2F2ABCE1B0191EC00E364EA /* UAProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UAProgressView.h; path = PlayerControllerView/UAProgressView.h; sourceTree = "<group>"; };
-		B2F2ABCF1B0191EC00E364EA /* UAProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UAProgressView.m; path = PlayerControllerView/UAProgressView.m; sourceTree = "<group>"; };
 		B2F2ABD11B01949200E364EA /* PlayerProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerProgressButton.h; path = PlayerControllerView/PlayerProgressButton.h; sourceTree = "<group>"; };
 		B2F2ABD21B01949200E364EA /* PlayerProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerProgressButton.m; path = PlayerControllerView/PlayerProgressButton.m; sourceTree = "<group>"; };
 		B2F2ABD41B01A2E000E364EA /* listen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = listen.mp3; sourceTree = "<group>"; };
@@ -3112,9 +3112,7 @@
 		5193437D1AC6C04A002BAF43 = {
 			isa = PBXGroup;
 			children = (
-				B2F2ABD41B01A2E000E364EA /* listen.mp3 */,
-				B2D7FBD71B01FAC300FB5B1B /* peiwoquliulang.mp3 */,
-				B2D7FBD81B01FAC300FB5B1B /* fangxia.mp3 */,
+				B2A05CF91B02E4F900C2B66E /* Songs */,
 				519343881AC6C04A002BAF43 /* MyMusicPlayer */,
 				519343A21AC6C04A002BAF43 /* MyMusicPlayerTests */,
 				519343871AC6C04A002BAF43 /* Products */,
@@ -3226,6 +3224,7 @@
 		519343B61AC6C184002BAF43 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B2A05CFA1B02F18D00C2B66E /* Play */,
 				51BCC7281AFF39260019F294 /* Search */,
 				5102345C1AC90DD100193967 /* More */,
 				514F22C21AC81CC700C8FAA1 /* HomePage */,
@@ -4747,6 +4746,25 @@
 			name = MY_cell;
 			sourceTree = "<group>";
 		};
+		B2A05CF91B02E4F900C2B66E /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				B2F2ABD41B01A2E000E364EA /* listen.mp3 */,
+				B2D7FBD71B01FAC300FB5B1B /* peiwoquliulang.mp3 */,
+				B2D7FBD81B01FAC300FB5B1B /* fangxia.mp3 */,
+			);
+			name = Songs;
+			sourceTree = "<group>";
+		};
+		B2A05CFA1B02F18D00C2B66E /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				B2A05CFB1B02F1E500C2B66E /* PlayingViewController.h */,
+				B2A05CFC1B02F1E500C2B66E /* PlayingViewController.m */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
 		B2D7FBCC1B01DF1100FB5B1B /* Icon&Default */ = {
 			isa = PBXGroup;
 			children = (
@@ -4795,12 +4813,10 @@
 		B2EFE6841B00522800218D2F /* PlayerControlVeiw */ = {
 			isa = PBXGroup;
 			children = (
-				B2F2ABCE1B0191EC00E364EA /* UAProgressView.h */,
-				B2F2ABCF1B0191EC00E364EA /* UAProgressView.m */,
-				B2EFE6811B00522000218D2F /* PlayerControlView.h */,
-				B2EFE6821B00522000218D2F /* PlayerControlView.m */,
 				B2EFE68C1B007CE400218D2F /* PlayerControlDiscItem.h */,
 				B2EFE68D1B007CE400218D2F /* PlayerControlDiscItem.m */,
+				B2EFE6811B00522000218D2F /* PlayerControlView.h */,
+				B2EFE6821B00522000218D2F /* PlayerControlView.m */,
 				B2F2ABD11B01949200E364EA /* PlayerProgressButton.h */,
 				B2F2ABD21B01949200E364EA /* PlayerProgressButton.m */,
 			);
@@ -6400,6 +6416,7 @@
 				519343BD1AC6C200002BAF43 /* BaseViewController.m in Sources */,
 				510234631AC91F8500193967 /* RCSegmentControl.m in Sources */,
 				B2EFE6831B00522000218D2F /* PlayerControlView.m in Sources */,
+				B2A05CFD1B02F1E500C2B66E /* PlayingViewController.m in Sources */,
 				51BCC7271AFE0FB30019F294 /* RCSegmentController.m in Sources */,
 				B2D7FBD41B01E26A00FB5B1B /* AFSoundManager.m in Sources */,
 				510234581AC8ED5200193967 /* MusicStoreViewController.m in Sources */,
@@ -6410,7 +6427,6 @@
 				510234551AC8ED3900193967 /* MyViewController.m in Sources */,
 				B2EFE68E1B007CE400218D2F /* PlayerControlDiscItem.m in Sources */,
 				5102345F1AC90EF600193967 /* MoreViewController.m in Sources */,
-				B2F2ABD01B0191EC00E364EA /* UAProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

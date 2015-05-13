@@ -7,12 +7,16 @@
 //
 
 #import "PlayerControlView.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "AppDelegate.h"
 #import "PlayerControlDiscItem.h"
 #import "PlayerProgressButton.h"
-#import <AudioToolbox/AudioToolbox.h>
-#import "AFSoundManager.h"
-@interface PlayerControlView()
+#import "PlayingViewController.h"
 
+#import "AFSoundManager.h"
+
+
+@interface PlayerControlView()
 
 @property (strong, nonatomic) UIButton *songListBtn;
 
@@ -22,7 +26,7 @@
 @property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) CGFloat localProgress;
 @property (nonatomic, strong) UIImageView *pauseIcon;
-@property (nonatomic) NSInteger currentSong;
+@property (nonatomic, assign) NSInteger currentSong;
 @property (nonatomic, strong) AFSoundManager *soundManager;
 
 @end
@@ -40,9 +44,17 @@
 
 - (void)configSubView {
     _songListView = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth - 110, 54) animationDuration:0];
-    __block PlayerControlView *control = self;
-    _songListView.SwipeBlock = ^(NSInteger currentIndex){
-        [control playMP3WithSongIndex:currentIndex];
+    __block PlayerControlView *player = self;
+
+    _songListView.SwipeBlock = ^(NSInteger pageIndex){
+        _currentSong = pageIndex;
+        [player playMP3AtCurrentIndex];
+    };
+    _songListView.TapActionBlock = ^(NSInteger pageIndex) {
+        PlayingViewController *pvc = [[PlayingViewController alloc]init];
+        [SHAREDAPP.navigationController presentViewController:pvc animated:NO completion:^{
+            NSLog(@"123");
+        }];
     };
     [self addSubview:_songListView];
 
@@ -64,35 +76,28 @@
     
     _pauseIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
     _pauseIcon.image = [UIImage imageNamed:@"miniplayer_btn_play_normal"];
-    
-    
-    
+    [_pauseIcon setHighlightedImage:[UIImage imageNamed:@"miniplayer_btn_play_highlight"]];
     _progressBtn.centralView = _pauseIcon;
-    __block UIImageView *imgView = _pauseIcon;
 
     _progressBtn.fillChangedBlock = ^(PlayerProgressButton *progressButton, BOOL filled, BOOL animated){
+        progressButton.centralView.highlighted = YES;
+    };
 
-    };
-    
-    _progressBtn.progressChangedBlock = ^(PlayerProgressButton *progressButton, CGFloat progress){
-//        [(UILabel *)progressButton.centralView setText:[NSString stringWithFormat:@"%2.0f%%", progress * 100]];
-    };
-    
-    NSString *path  = [[NSBundle mainBundle] pathForResource:@"listen" ofType:@"mp3"];
-    NSURL *pathURL = [NSURL fileURLWithPath : path];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef) pathURL, &_horn);
-    
-//    __block UInt32 horn = _horn;
-    __block PlayerControlView *player = self;
+
+    __block UIImageView *imgView = _pauseIcon;
+
     _progressBtn.didSelectBlock = ^(PlayerProgressButton *progressButton){
-//        AudioServicesPlaySystemSound(horn);
         _paused = !_paused;
         if (_paused == YES) {
             [player pause];
             imgView.image = [UIImage imageNamed:@"miniplayer_btn_play_normal"];
             [imgView setHighlightedImage:[UIImage imageNamed:@"miniplayer_btn_play_highlight"]];
         }else {
-            [player playMP3WithSongIndex:_currentSong];
+            if (_localProgress <= 0) {
+                [player playMP3AtCurrentIndex];
+            }else{
+                [player continuePlay];
+            }
             imgView.image = [UIImage imageNamed:@"miniplayer_btn_pause_normal"];
             [imgView setHighlightedImage:[UIImage imageNamed:@"miniplayer_btn_pause_highlight"]];
         }
@@ -102,57 +107,24 @@
     
     [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
 }
-- (UIImage*)getCoverImage {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"listen" ofType:@"mp3"];
-    NSURL *mp3URL = [NSURL fileURLWithPath:path];
-    AVURLAsset *mp3Asset = [AVURLAsset URLAssetWithURL:mp3URL options:nil];
-    
-    for (AVMetadataItem *metaDataItem in [mp3Asset commonMetadata]) {
-        
-        if ([[metaDataItem commonKey] isEqualToString:@"artwork"]) {
-            
-            return [UIImage imageWithData:[(NSDictionary*)metaDataItem.value objectForKey:@"data"]];
-            
-        }
-    }
-    
-    return nil;
-    
-}
-- (void)getSongDetail {
-    NSMutableDictionary *retDic = [[NSMutableDictionary alloc] init];
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"listen" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    AVURLAsset *mp3Asset = [AVURLAsset URLAssetWithURL:url options:nil];
-    
-    
-    for (NSString *format in [mp3Asset availableMetadataFormats]) {
-        for (AVMetadataItem *metadataItem in [mp3Asset metadataForFormat:format]) {
-            
-            if(metadataItem.commonKey)
-                [retDic setObject:metadataItem.value forKey:metadataItem.commonKey];
-            
-        }
-    }
-}
 - (void)pause {
     [[AFSoundManager sharedManager]pause];
 }
-- (void)playMP3WithSongIndex:(NSInteger)currentSong {
-//    [_songListView resetContent];
-    NSDictionary *dict = [_songList objectAtIndex:currentSong];
+- (void)continuePlay {
+    [[AFSoundManager sharedManager]resume];
+}
+- (void)playMP3AtCurrentIndex {
+    if (_paused == YES) {
+        return;
+    }
+    NSDictionary *dict = [_songList objectAtIndex:_currentSong];
     NSString *file = [dict objectForKey:@"file"];
     [[AFSoundManager sharedManager]startPlayingLocalFileWithName:file andBlock:^(int percentage, CGFloat elapsedTime, CGFloat timeRemaining, NSError *error, BOOL finished) {
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
         [formatter setDateFormat:@"mm:ss"];
-        
-//        NSDate *elapsedTimeDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
-//        _elapsedTime.text = [formatter stringFromDate:elapsedTimeDate];
-//        
-//        NSDate *timeRemainingDate = [NSDate dateWithTimeIntervalSince1970:timeRemaining];
-//        _timeRemaining.text = [formatter stringFromDate:timeRemainingDate];
+    
         
         _localProgress = percentage * 0.01;
         if(finished == YES) {

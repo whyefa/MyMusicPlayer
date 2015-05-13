@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RCSegmentController.h"
 #import "PlayerControlView.h"
+
+#define SHAREDAPP ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate,RCSegmentControllerDataSource,RCSegmentControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
